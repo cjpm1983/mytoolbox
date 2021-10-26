@@ -36,24 +36,41 @@ echo $OUTPUT->header();
 echo $OUTPUT->heading(get_string('header', 'report_vivo'));
 $urlOrphan=new moodle_url('/report/vivo/orphans.php');
 $ontology=new moodle_url('/report/vivo/ontology.php');
+$diagnostic=new moodle_url('/report/vivo/diagnostic.php');
+$backups=new moodle_url('/report/vivo/backups.php');
+$drafts = new moodle_url('/report/vivo/drafts.php');
 
 ?>
 
 <br>
 <ul class='menuvivo'>
-    <li>
-        <a href='<?php echo $ontology ?>'  class='btn btn-success'><?php echo get_string('generate_ontology','report_vivo'); ?></a>    
-    </li>
-    <li>
-        <a href='<?php echo $urlOrphan ?>'  class='btn btn-success' ><?php echo get_string('cursoshuerfanos','report_vivo'); ?></a>    
-    </li>
+    <!--li>
+        <a href='<?php //echo $ontology ?>'  class='btn btn-success'><?php //echo get_string('generate_ontology','report_vivo'); ?></a>    
+    </li-->
+
     <li>
         <button onclick='mform1()' class='btn btn-success' ><?php echo get_string('form1header','report_vivo') ?></button>    
     </li>
     <li>
     <button onclick='mform2()'  class='btn btn-success' ><?php echo get_string('form2header','report_vivo') ?></button>    
     </li>
+    <li>
+        <a href='<?php echo $urlOrphan ?>'  class='btn btn-success' ><?php echo get_string('cursoshuerfanos','report_vivo'); ?></a>    
+    </li>
+    <li>
+        <a href='<?php echo $diagnostic ?>'  class='btn btn-success' ><?php echo get_string('cursosdiagnostico','report_vivo'); ?></a>    
+    </li>
+    <li>
+        <a href='<?php echo $backups ?>'  class='btn btn-success' ><?php echo "Backups"; ?></a>    
+    </li>
+    <li>
+        <a href='<?php echo $drafts ?>'  class='btn btn-success' ><?php echo "Drafts"; ?></a>    
+    </li>
 </ul>
+
+<?php
+echo sys_get_temp_dir()."";
+?>
 
 <style>
     .menuvivo{
@@ -319,7 +336,7 @@ function getFacultad($cid,$ccat){
     return $headline->name;
 }
 
-//funcion mia para seeder de datos de prueba
+//funcion mia para seeder de datos de prueba no se usa en el plugin , comentar
 
 function check_enrol($shortname, $userid, $roleid, $enrolmethod = 'manual') { 
 	global $DB; 
@@ -364,31 +381,34 @@ echo "
     window.addEventListener('load',escondeTodos,false);
     
     function escondeTodos(){
+        $('[id^=mform1]').hide();
+        $('[id^=mform2]').hide();
         $('#mform1').hide();
         $('#mform2').hide();
+        //alert('javascripfunciona')
     }
 
     function mform1(){
         $('#mform1').show();
         $('#mform2').hide();
-        $('.mform1').show();
-        $('.mform2').hide();
+        $('[id^=mform1]').show();
+        $('[id^=mform2]').hide();
     }
 
     
     function mform2(){
         $('#mform1').hide();
         $('#mform2').show();
-        $('.mform1').hide();
-        $('.mform2').show();
+        $('[id^=mform1]').hide();
+        $('[id^=mform2]').show();
     }
 
     
     function mform3(){
         $('#mform1').hide();
         $('#mform2').hide();
-        $('.mform1').hide();
-        $('.mform2').hide();
+        $('[id^=mform1]').hide();
+        $('[id^=mform2]').hide();
     }
 
 

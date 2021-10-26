@@ -66,11 +66,11 @@ if (!$tablef->is_downloading()){
 
             
             $tablef->define_columns(array('id','nombre', 'category'));
-
+            
             $tablef->define_headers(array(
                 get_string('idcurso', 'report_vivo'), 
                 get_string('name', 'report_vivo'), 
-                get_string('facultad', 'report_vivo')
+                get_string('facultad', 'report_vivo'),
             ));
 
             //$tablef->sortable(true,'nombre',SORT_DESC);
@@ -82,7 +82,7 @@ if (!$tablef->is_downloading()){
 
 
                 $tablef->setup();
-
+//print_r($result);
                 foreach($result as $r){
                     if ($r->category != 0){
                         $facultad = getFacultad($r->id, $r->category);

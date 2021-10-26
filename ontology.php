@@ -48,7 +48,7 @@ $PAGE->set_context($systemcontext);
     <br><br><br>
     <input type="hidden" name="generar" value="si">
     <input type="checkbox" name="showcode" id="showcode">
-    <label for="showcode" style="color: red;">Mostrar salida del script generador. <br>(*Solo para fines inspecci&oacute;n, puede ralentizar considerablemente <br>la recarga de la p&aacute;gina.)</label>
+    <label for="showcode" style="color: red;">Mostrar salida del script generador. <br>*(Solo para fines inspecci&oacute;n, puede ralentizar considerablemente <br>la recarga de la p&aacute;gina.)</label>
     
 </form>
 

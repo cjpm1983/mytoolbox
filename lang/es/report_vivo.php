@@ -48,3 +48,15 @@
   $string['ontology'] = 'Ontología';
  $string['create_ontology'] = 'Crear Ontología';
  $string['generate_ontology'] = 'Generar Ontología';
+
+ $string['cursosdiagnostico'] = 'Diagnostico de cursos';
+
+ $string['ficherosencontrados'] = 'Ficheros encontrados';
+ $string['espacioocupado'] = 'Espacio ocupado';
+ $string['eliminartodos'] = 'Eliminar todos';
+ $string['limpiar'] = 'Vaciar las carpetas<trashdir> y <temp/backup>';
+ $string['ubicacion'] = 'Ubicación';
+ $string['tamanio'] = 'Tamaño en Mb';
+ $string['curso'] = 'Curso';
+ $string['fichero'] = 'Archivo';
+ $string['borrar'] = 'Eliminar';
